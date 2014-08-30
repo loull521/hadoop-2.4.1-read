@@ -1,0 +1,17 @@
+option java_package = "loull.hadoop.pb.rpc";
+option java_outer_classname = "CalculatorPbWrapper";
+option java_generic_services = true;
+
+message CalRequest {
+	required int32 x = 1;
+	required int32 y = 2;
+	required string methodName = 3;
+};
+
+message CalResponse {
+	required int32 value = 1;
+};
+
+service CalculateService {
+	rpc add(CalRequest) returns (CalResponse);
+}

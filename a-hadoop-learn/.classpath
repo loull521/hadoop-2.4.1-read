@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/ABC"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-annotations"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-archives"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-assemblies"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-auth"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-auth-examples"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-client"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-datajoin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-dist"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-distcp"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-extras"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-gridmix"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-hdfs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-hdfs-httpfs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-hdfs-nfs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-app"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-hs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-hs-plugins"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-jobclient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-client-shuffle"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-mapreduce-examples"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-maven-plugins"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-minicluster"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-minikdc"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-nfs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-openstack"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-rumen"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-sls"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-streaming"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-tools-dist"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-api"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-applications-distributedshell"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-applications-unmanaged-am-launcher"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-client"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-server-applicationhistoryservice"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-server-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-server-nodemanager"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-server-resourcemanager"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-server-tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hadoop-yarn-server-web-proxy"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar" sourcepath="M2_REPO/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0-sources.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
