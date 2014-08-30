@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.RMContextImpl"
+        x="351" y="294">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.SchedulerEventDispatcher.EventProcessor"
+        x="109" y="728">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.RMFatalEvent"
+        x="1094" y="645">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.RMActiveServices"
+        x="759" y="24">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContextImpl"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.ApplicationAttemptEventDispatcher"
+        x="36" y="458">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"
+            endpointName="rmContext" kind="Simple"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.RMContainerPreemptEventDispatcher"
+        x="27" y="181">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.ApplicationEventDispatcher"
+        x="162" y="40">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"
+            endpointName="rmContext" kind="Simple"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.SchedulerEventDispatcher"
+        x="53" y="550">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.RMContext"
+        x="388" y="176">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.RMFatalEventType"
+        x="849" y="640">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.NodeEventDispatcher"
+        x="33" y="314">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"
+            endpointName="rmContext" kind="Simple"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager"
+        x="801" y="235">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.RMActiveServices"
+            endpointName="activeServices" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContextImpl"
+            endpointName="rmContext" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContextImpl"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.RMActiveServices"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager.RMFatalEventDispatcher"
+        x="370" y="33">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"
+            endpointName="rmContext" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager"
+            endpointName="rm" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.RMContext"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.server.resourcemanager.ResourceManager"/>
+    </Class>
+</ClassDiagram>

@@ -1,0 +1,13 @@
+/org/
+/META-INF/
+/core-site.xml
+/fi-site.xml
+/hadoop-policy.xml
+/jets3t.properties
+/krb5.conf
+/log4j.properties
+/test-fake-default.xml
+/test-patch.properties
+/test.har/
+/testConf.xml
+/webapps/

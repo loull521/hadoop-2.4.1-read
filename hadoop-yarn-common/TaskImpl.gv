@@ -1,0 +1,32 @@
+digraph TaskImpl {
+graph [ label="TaskImpl", fontsize=24, fontname=Helvetica];
+node [fontsize=12, fontname=Helvetica];
+edge [fontsize=9, fontcolor=blue, fontname=Arial];
+"TaskImpl.NEW" [ label = NEW ];
+"TaskImpl.NEW" -> "TaskImpl.SCHEDULED" [ label = "T_SCHEDULE" ];
+"TaskImpl.NEW" -> "TaskImpl.KILLED" [ label = "T_KILL,\nT_RECOVER" ];
+"TaskImpl.NEW" -> "TaskImpl.RUNNING" [ label = "T_RECOVER" ];
+"TaskImpl.NEW" -> "TaskImpl.SUCCEEDED" [ label = "T_RECOVER" ];
+"TaskImpl.NEW" -> "TaskImpl.FAILED" [ label = "T_RECOVER" ];
+"TaskImpl.SCHEDULED" [ label = SCHEDULED ];
+"TaskImpl.SCHEDULED" -> "TaskImpl.RUNNING" [ label = "T_ATTEMPT_LAUNCHED" ];
+"TaskImpl.SCHEDULED" -> "TaskImpl.KILL_WAIT" [ label = "T_KILL" ];
+"TaskImpl.SCHEDULED" -> "TaskImpl.SCHEDULED" [ label = "T_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED" ];
+"TaskImpl.SCHEDULED" -> "TaskImpl.FAILED" [ label = "T_ATTEMPT_FAILED" ];
+"TaskImpl.SUCCEEDED" [ label = SUCCEEDED ];
+"TaskImpl.SUCCEEDED" -> "TaskImpl.SUCCEEDED" [ label = "T_ATTEMPT_COMMIT_PENDING,\nT_ATTEMPT_LAUNCHED,\nT_ATTEMPT_SUCCEEDED,\nT_KILL,\nT_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED,\nT_ADD_SPEC_ATTEMPT" ];
+"TaskImpl.SUCCEEDED" -> "TaskImpl.SCHEDULED" [ label = "T_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED" ];
+"TaskImpl.SUCCEEDED" -> "TaskImpl.FAILED" [ label = "T_ATTEMPT_FAILED" ];
+"TaskImpl.RUNNING" [ label = RUNNING ];
+"TaskImpl.RUNNING" -> "TaskImpl.RUNNING" [ label = "T_ATTEMPT_COMMIT_PENDING,\nT_ATTEMPT_LAUNCHED,\nT_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED,\nT_ADD_SPEC_ATTEMPT" ];
+"TaskImpl.RUNNING" -> "TaskImpl.SUCCEEDED" [ label = "T_ATTEMPT_SUCCEEDED" ];
+"TaskImpl.RUNNING" -> "TaskImpl.KILL_WAIT" [ label = "T_KILL" ];
+"TaskImpl.RUNNING" -> "TaskImpl.FAILED" [ label = "T_ATTEMPT_FAILED" ];
+"TaskImpl.FAILED" [ label = FAILED ];
+"TaskImpl.FAILED" -> "TaskImpl.FAILED" [ label = "T_ATTEMPT_COMMIT_PENDING,\nT_ATTEMPT_LAUNCHED,\nT_ATTEMPT_SUCCEEDED,\nT_KILL,\nT_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED,\nT_ADD_SPEC_ATTEMPT" ];
+"TaskImpl.KILL_WAIT" [ label = KILL_WAIT ];
+"TaskImpl.KILL_WAIT" -> "TaskImpl.KILL_WAIT" [ label = "T_ATTEMPT_COMMIT_PENDING,\nT_ATTEMPT_LAUNCHED,\nT_ATTEMPT_SUCCEEDED,\nT_KILL,\nT_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED,\nT_ADD_SPEC_ATTEMPT" ];
+"TaskImpl.KILL_WAIT" -> "TaskImpl.KILLED" [ label = "T_ATTEMPT_SUCCEEDED,\nT_ATTEMPT_FAILED,\nT_ATTEMPT_KILLED" ];
+"TaskImpl.KILLED" [ label = KILLED ];
+"TaskImpl.KILLED" -> "TaskImpl.KILLED" [ label = "T_KILL,\nT_ATTEMPT_KILLED,\nT_ADD_SPEC_ATTEMPT" ];
+}

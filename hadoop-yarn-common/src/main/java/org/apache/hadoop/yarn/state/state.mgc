@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="org.apache.hadoop.yarn.state.StateMachineFactory"
+        x="285" y="242">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.state.Graph.Node"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.state.Graph"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.TransitionsListNode"
+        x="903" y="120">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.Transition"
+        x="456" y="434">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.yarn.state.SingleArcTransition"
+        x="76" y="600">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.yarn.state.Graph" x="1085" y="512">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph"
+            endpointName="subgraphs" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph.Node"
+            endpointName="nodes" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph"
+            endpointName="parent" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.yarn.state.Graph.Edge"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.ApplicableSingleOrMultipleTransition"
+        x="441" y="90">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.yarn.state.MultipleArcTransition"
+        x="588" y="596">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.MultipleInternalArc"
+        x="627" y="406">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.ApplicableTransition"
+        x="903" y="313">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.yarn.state.Graph.Node" x="1152" y="707">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph.Edge"
+            endpointName="ins" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph"
+            endpointName="parent" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph.Edge"
+            endpointName="outs" kind="Simple"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.InternalStateMachine"
+        x="174" y="107">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.yarn.state.Graph.Edge" x="911" y="566">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph.Node"
+            endpointName="to" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.yarn.state.Graph.Node"
+            endpointName="from" kind="Simple"/>
+    </Class>
+    <Class name="org.apache.hadoop.yarn.state.StateMachine" x="42" y="1">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.yarn.state.StateMachineFactory.SingleInternalArc"
+        x="78" y="421">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>

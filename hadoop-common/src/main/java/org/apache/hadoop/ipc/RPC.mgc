@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="org.apache.hadoop.ipc.Client" x="1045" y="113">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Client.ClientExecutorServiceFactory"
+            endpointName="clientExcecutorFactory" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.Connection"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.ClientExecutorServiceFactory"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.Call"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.ConnectionId"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.Listener" x="325" y="228">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Listener.Reader"
+            endpointName="readers" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Listener.Reader"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.ConnectionManager"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Connection"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Client.Connection" x="281" y="402">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Client.ConnectionId"
+            endpointName="remoteId" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.AuthProtocol"
+            endpointName="authProtocol" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.Call"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.ConnectionId"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.AuthProtocol" x="140" y="567">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.RpcKindMapValue" x="229" y="891">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.RPC.RpcInvoker"
+            endpointName="rpcInvoker" kind="Simple"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.Call" x="-30" y="941">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Connection"
+            endpointName="connection" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.RPC.RpcKind"
+            endpointName="rpcKind" kind="Simple"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.Connection" x="77" y="1144">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Call"
+            endpointName="authFailedCall" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Call"
+            endpointName="saslCall" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.AuthProtocol"
+            endpointName="authProtocol" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Responder"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.AuthProtocol"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Call"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.Builder" x="-46" y="163">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.Listener.Reader" x="584" y="239">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Listener"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.Responder" x="824" y="459">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Connection"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC" x="1" y="76">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.RPC.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.RPC.RpcInvoker"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client.ConnectionId"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.Server" x="849" y="383">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="org.apache.hadoop.ipc.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.RPC"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.RPC.RpcInvoker"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.Server.ProtoClassProtoImpl"
+        x="319" y="14">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.Handler" x="219" y="1750">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Responder"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.ExceptionsHandler"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.Server.VerProtocolImpl"
+        x="334" y="145">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.RPC.Server.ProtoClassProtoImpl"
+            endpointName="protocolTarget" kind="Simple"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server" x="373" y="1321">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.ExceptionsHandler"
+            endpointName="exceptionsHandler" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Listener"
+            endpointName="listener" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.RpcKindMapValue"
+            endpointName="rpcKindMap" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.ConnectionManager"
+            endpointName="connectionManager" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Handler"
+            endpointName="handlers" kind="Simple"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Responder"
+            endpointName="responder" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Listener.Reader"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Responder"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Listener"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.AuthProtocol"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.ConnectionManager"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.ExceptionsHandler"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Connection"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Call"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.VersionMismatch" x="21" y="441">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="org.apache.hadoop.ipc.Client.ClientExecutorServiceFactory"
+        x="911" y="57">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.WrappedRpcServerException"
+        x="605" y="82">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.RpcKind" x="-13" y="653">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.RPC.RpcInvoker" x="781" y="188">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.ConnectionManager" x="-28" y="1674">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.Server.Connection"
+            endpointName="connections" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Server.Connection"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Client.Call" x="-35" y="782">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.apache.hadoop.ipc.RPC.RpcKind"
+            endpointName="rpcKind" kind="Simple"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Server.ExceptionsHandler" x="491" y="797">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.apache.hadoop.ipc.Client.ConnectionId" x="589" y="467">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.apache.hadoop.ipc.Client"/>
+    </Class>
+</ClassDiagram>
