@@ -1,5 +1,7 @@
-package loull.hadoop.pb.rpc;
+package loull.hadoop.pb.rpc2;
 
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -11,9 +13,10 @@ import java.util.Iterator;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import loull.hadoop.pb.rpc.CalculatorPbWrapper.CalRequest;
-import loull.hadoop.pb.rpc.CalculatorPbWrapper.CalResponse;
-import loull.hadoop.pb.rpc.CalculatorPbWrapper.CalculateService;
+import loull.hadoop.pb.rpc2.CalculatorPbWrapper.CalculateService;
+import loull.hadoop.pb.rpc2.CalculatorPbWrapper.CalculatorRequestProto;
+import loull.hadoop.pb.rpc2.CalculatorPbWrapper.CalculatorResponseProto;
+import loull.hadoop.pb.rpc2.ProtobufRpcProtos.RequestHeaderProto;
 
 import com.google.protobuf.BlockingService;
 import com.google.protobuf.Descriptors.MethodDescriptor;
@@ -215,8 +218,8 @@ public class Server {
 //				System.out.println("before cancel:" + readKey.interestOps());
 				readKey.cancel();
 //				System.out.println("after cancel:" + readKey.interestOps());
-				conn.close();
-				conn = null;
+//				conn.close();
+//				conn = null;
 			}
 		}
 		
@@ -226,6 +229,7 @@ public class Server {
 			System.out.println("conn added to BockingQueue.And wakeup readSelector select()");
 		}
 		
+		@SuppressWarnings("unused")
 		void shutdown() {
 			assert !running;
 			readSelector.wakeup();
@@ -238,27 +242,19 @@ public class Server {
 	}//Reader
 	
 	private class Call {
-		private Connection connection;
+		Connection connection;
+		Message header;
+		@SuppressWarnings("unused")
 		byte[] messageData;
 		Message message;
+		@SuppressWarnings("unused")
 		long time;
 		
-		public Call(Connection conn, Message message, long time) {
+		public Call(Connection conn, Message header,Message message, long time) {
 			this.connection = conn;
+			this.header = header;
 			this.message = message;
 			this.time = time;
-		}
-		
-		public byte[] getMessageData() {
-			return messageData;
-		}
-
-		public Message getMessage() {
-			return message;
-		}
-
-		public long getTime() {
-			return time;
 		}
 	}
 	
@@ -271,6 +267,7 @@ public class Server {
 			this.channel = channel;
 		}
 
+		@SuppressWarnings("unused")
 		public void processTail() {
 			ByteBuffer buffer = ByteBuffer.allocate(16);
 			int nbyte = 0;
@@ -313,9 +310,12 @@ public class Server {
 				
 				if (!data.hasRemaining()) {
 					dataLengthBuffer.clear();
-					CalRequest request = CalRequest.parseFrom(data.array());
+					DataInputStream dis = new DataInputStream(new ByteArrayInputStream(data.array()));
+					RequestHeaderProto header = RequestHeaderProto.parseDelimitedFrom(dis);
+					CalculatorRequestProto request = CalculatorRequestProto.parseDelimitedFrom(dis);
+					//这里耦合了，硬编码了请求类型表示请求是PB序列化的
 					data = null;
-					Call call = new Call(this, request, System.currentTimeMillis());
+					Call call = new Call(this, header, request, System.currentTimeMillis());
 					try {
 						callQueue.put(call);
 						System.out.println("put a call in callQueue");
@@ -325,6 +325,8 @@ public class Server {
 				return count;
 			}
 		}//readAndProcess
+		
+		
 		
 		public void close() {
 			data = null;
@@ -339,6 +341,7 @@ public class Server {
 		}
 	}//Connection
 	
+	@SuppressWarnings("unused")
 	private class Handler extends Thread{
 	}
 	
@@ -350,13 +353,18 @@ public class Server {
 				try {
 					Call call = callQueue.take();
 					System.out.println("take out a call from callQueue");
-					System.out.println("call.getMessage:" + call.getMessage());
-					CalRequest request = (CalRequest)call.getMessage();
+					System.out.println("call.header:" + call.header);
+					System.out.println("call.message:" + call.message);
+					
+					RequestHeaderProto header = (RequestHeaderProto)call.header;
+					CalculatorRequestProto request = (CalculatorRequestProto)call.message;
+					String methodName = header.getMethodName();
 					MethodDescriptor methodDescriptor = 
 							CalculateService.getDescriptor()
-							.findMethodByName(request.getMethodName());
-					CalResponse response = (CalResponse)
+							.findMethodByName(methodName);
+					CalculatorResponseProto response = (CalculatorResponseProto)
 							impl.callBlockingMethod(methodDescriptor, null, request);
+					
 					byte[] data = response.toByteArray();
 					ByteBuffer dataLengthBuffer = ByteBuffer.allocate(4);
 					ByteBuffer databuf = ByteBuffer.allocate(data.length);
@@ -365,12 +373,6 @@ public class Server {
 					databuf.put(data);
 					databuf.flip();
 					SocketChannel channel = call.connection.channel;
-					
-//					Thread.sleep(2000);
-//					if (!channel.isOpen()) {
-//						System.out.println("channel is closed");
-//					}
-					
 					channel.write(dataLengthBuffer);
 					channel.write(databuf);
 				} catch (InterruptedException e) {

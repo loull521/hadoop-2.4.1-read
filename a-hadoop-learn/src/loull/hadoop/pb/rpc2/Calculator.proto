@@ -1,0 +1,20 @@
+option java_package = "loull.hadoop.pb.rpc2";
+option java_outer_classname = "CalculatorPbWrapper";
+option java_generic_services = true;
+
+message CalculatorRequestProto {
+	required int32 x = 1;
+	required int32 y = 2;
+};
+
+message CalculatorResponseProto {
+	required int32 value = 1;
+};
+
+message CalculatorIncRequestProto {
+	required int32 x = 1;
+};
+
+service CalculateService {
+	rpc add(CalculatorRequestProto) returns (CalculatorResponseProto);
+}

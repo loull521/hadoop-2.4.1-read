@@ -36,7 +36,7 @@ import org.apache.hadoop.yarn.server.api.protocolrecords.impl.pb.RegisterNodeMan
 
 import com.google.protobuf.RpcController;
 import com.google.protobuf.ServiceException;
-
+//必须实现ResourceTrackerPB接口
 public class ResourceTrackerPBServiceImpl implements ResourceTrackerPB {
 
   private ResourceTracker real;

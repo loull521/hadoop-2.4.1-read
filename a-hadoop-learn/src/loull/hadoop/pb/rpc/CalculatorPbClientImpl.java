@@ -16,17 +16,11 @@ import loull.hadoop.pb.rpc.CalculatorPbWrapper.CalResponse;
 public class CalculatorPbClientImpl implements Calculator {
 	
 	private CalculatorPB proxy;
-//	Socket socket = null;
 	
 	public CalculatorPbClientImpl() {
 		System.out.println("CalculatorPbClientImpl get the proxy");
 		proxy = (CalculatorPB) Proxy.newProxyInstance(CalculatorPB.class.getClassLoader(), 
 				new Class[] {CalculatorPB.class}, new Invoker());
-//		try {
-//			socket = new Socket("localhost", 8989);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
 	}
 	
 	public class Invoker implements InvocationHandler {
@@ -43,7 +37,7 @@ public class CalculatorPbClientImpl implements Calculator {
 			out.writeInt(bytes.length);
 			out.write(bytes);
 			out.flush();
-//			socket.shutdownOutput();
+			socket.shutdownOutput();
 			
 			int dataLen = in.readInt();
 			byte[] data = new byte[dataLen];
